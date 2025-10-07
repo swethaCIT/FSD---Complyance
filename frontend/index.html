@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Invoicing ROI Simulator</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Invoicing ROI Simulator</h1>
+      <div class="grid">
+        <form id="sim-form" class="card">
+          <h2>Inputs</h2>
+          <label>Scenario Name <input name="scenario_name" required placeholder="Q4_Pilot" /></label>
+          <label>Monthly Invoice Volume <input name="monthly_invoice_volume" type="number" required value="2000" /></label>
+          <label>AP Staff Count <input name="num_ap_staff" type="number" required value="3" /></label>
+          <label>Avg Hours per Invoice <input name="avg_hours_per_invoice" type="number" step="0.01" required value="0.17" /></label>
+          <label>Hourly Wage ($) <input name="hourly_wage" type="number" step="0.01" required value="30" /></label>
+          <label>Manual Error Rate (%) <input name="error_rate_manual" type="number" step="0.01" required value="0.5" /></label>
+          <label>Error Cost ($) <input name="error_cost" type="number" step="0.01" required value="100" /></label>
+          <label>Time Horizon (months) <input name="time_horizon_months" type="number" required value="36" /></label>
+          <label>Implementation Cost ($) <input name="one_time_implementation_cost" type="number" step="0.01" value="50000" /></label>
+
+          <div class="row">
+            <button type="submit">Simulate</button>
+            <button id="save-btn" type="button">Save Scenario</button>
+          </div>
+
+          <div class="row">
+            <input id="email" placeholder="Enter email to generate report" />
+            <button id="report-btn" type="button">Generate Report</button>
+          </div>
+        </form>
+
+        <div class="card">
+          <h2>Results</h2>
+          <div id="results"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Saved Scenarios</h2>
+        <ul id="scenarios"></ul>
+      </div>
+    </div>
+
+    <script src="/app.js" type="module"></script>
+  </body>
+  </html>
+
+
