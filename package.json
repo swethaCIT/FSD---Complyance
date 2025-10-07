@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "nodemon backend/server.js",
-    "start": "node backend/server.js"
+    "start": "node backend/server.js",
+    "vercel-build": "echo 'no build step'"
   },
   "dependencies": {
     "better-sqlite3": "^9.4.5",
